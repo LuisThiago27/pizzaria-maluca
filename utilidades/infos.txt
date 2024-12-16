@@ -1,0 +1,58 @@
+Aula 1: 
+Link para a Hospedagem:
+https://king.host/node-js
+
+4 - Configurações finais e erros comuns
+ 
+Comandos básicos dentro do SSH:
+
+cd nome_da_pasta = navega para a pasta informada
+cd .. = volta para a pasta anterior
+ls = lista todos os arquivos da pasta atual
+
+pm2 list = mostra as aplicações node rodando (e o ID delas)
+pm2 restart ID = reinicia uma aplicação node (colocar o ID da aplicação)
+pm2 logs = mostra os últimos logs em tempo real
+pm2 flush = limpa os arquivos de logs e erros
+
+npm install = (*dentro da pasta server*) - instala todos os módulos do projeto
+npm install nome_do_modulo@versao = (*dentro da pasta server*) - instala um módulo específico e uma versão específica
+npm uninstall nome_do_modulo (*dentro da pasta server*) = desinstala um módulo
+
+cat nome_do_arquivo = mostra o arquivo dentro do terminal no modo leitura
+
+nvm use versao_do_node = troca a versão do versão do node
+node -v = mostra a versão atual do node
+
+.......
+
+
+
+Em relação a API de Rotas (para obter as taxas de entrega) façam um cadastro neste site: https://www.geoapify.com/
+
+Depois, criem um Projeto e uma API KEY lá dentro do site da GeoApiFy. 
+Ai, vocês irão substituir essa API no código: caminho: server/controllers/pedido.js
+Em anexo, coloquei o Model do banco de dados, com todas as tabelas prontas.
+Na Módulo "Banco de Dados", na aula "10 - Como importar um Model" ensino como fazer a importação deste arquivo.
+
+Para a aplicação funcionar perfeitamente, você precisa cadastrar os seguintes registros no banco de dados: (se atente a cadastrar na sequencia correta, para os IDs ficarem certos)
+
+******
+OBS: Importante realizar estes comandos antes:
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+TRUNCATE formapagamento;
+TRUNCATE pedidostatus;
+TRUNCATE taxaentregatipo;
+TRUNCATE tipoentrega;
+
+SET FOREIGN_KEY_CHECKS = 1;
+
+******
+
+
+
+
+Além disso, você precisa mudar as configurações de conexão com o banco de dados no seu arquivo "config.js" dentro da pasta "server"
+Por fim, lembre-se de executar o comando "npm install" dentro da pasta "server" para instalar todos os módulos necessários.
