@@ -39,6 +39,10 @@ server.use(
     }
 )
 
+server.get('/public/*', restify.plugins.serveStatic({
+    directory: __dirname
+}))
+
 //Modifica o array de erro e mostra para o usuario uma mensagem personalizada
 server.on('restifyError', function(req, res, err, callback) {
     err.toJSON = function customToJSON() {

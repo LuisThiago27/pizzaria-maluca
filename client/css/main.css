@@ -47,6 +47,45 @@ b {
     background-color: var(--color-secondary);
 }
 
+.container-mensagens {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 9999;
+}
+
+.loader-full {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color: rgb(255 253 254 / 95%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.toast {
+    opacity: 1 !important;
+    width: auto;
+    color: var(--color-white);
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.toast.red {
+    background-color: var(--color-red);
+}
+
+.toast.green {
+    background-color: var(--color-green);
+}
+
 .width-fix {
     width: calc(100% - 20px) !important;
     max-width: 800px;
