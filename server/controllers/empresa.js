@@ -53,11 +53,39 @@ const controllers = () => {
             }
         }
 
+    };
+
+    const salvarDadosEndereco = async (req) => {
+     
+        try {
+
+            //obtem o id da empresa logada
+            let _empresaId = Acesso.retornaCodigoTokenAcesso('IdEmpresa', req);
+
+            req.body.idempresa = _empresaId;
+
+            var ComandoSql = await readCommandSql.retornaStringSql('salvarDadosEndereco', 'empresa');
+            await db.Query(ComandoSql, req.body);
+
+            return {
+                status: 'success',
+                message: 'Dados atualizados com sucesso'
+            }
+
+        } catch (error) {
+            console.log(error);
+            return {
+                status: 'error',
+                message: 'Falha ao atualizar dados. Tente novamente!.'
+            }
+        }
+
     }
 
     return Object.create({
         obterDadosCompletos,
-        salvarDadosSobre
+        salvarDadosSobre,
+        salvarDadosEndereco
     })
 }
 

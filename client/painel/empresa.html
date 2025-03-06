@@ -141,8 +141,8 @@
                                     <div class="col-3">
                                         <div class="form-group container-cep">
                                             <p class="title-categoria mb-0"><b>CEP:</b></p>
-                                            <input type="text" class="form-control" />
-                                            <a class="btn btn-yellow btn-sm">
+                                            <input type="text" class="form-control cep" id="txtCEP" />
+                                            <a href="#" class="btn btn-yellow btn-sm" onclick="empresa.method.buscarCep()">
                                                 <i class="fa fa-search"></i>
                                             </a>
                                         </div>
@@ -152,43 +152,43 @@
 
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <p class="title-categoria mb-0"><b>Endereço:</b></p>
-                                            <input type="text" class="form-control" />
+                                            <p class="title-categoria mb-0 mt-4"><b>Endereço:</b></p>
+                                            <input type="text" class="form-control" id="txtEndereco"/>
                                         </div>
                                     </div>
 
                                     <div class="col-4">
                                         <div class="form-group">
-                                            <p class="title-categoria mb-0"><b>Bairro:</b></p>
-                                            <input type="text" class="form-control" />
+                                            <p class="title-categoria mb-0 mt-4"><b>Bairro:</b></p>
+                                            <input type="text" class="form-control" id="txtBairro" />
                                         </div>
                                     </div>
 
                                     <div class="col-2">
                                         <div class="form-group">
-                                            <p class="title-categoria mb-0"><b>Número:</b></p>
-                                            <input type="text" class="form-control" />
+                                            <p class="title-categoria mb-0 mt-4"><b>Número:</b></p>
+                                            <input type="text" class="form-control" id="txtNumero" />
                                         </div>
                                     </div>
 
                                     <div class="col-6">
                                         <div class="form-group">
                                             <p class="title-categoria mb-0 mt-4"><b>Cidade:</b></p>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" class="form-control" id="txtCidade" />
                                         </div>
                                     </div>
 
                                     <div class="col-4">
                                         <div class="form-group">
                                             <p class="title-categoria mb-0 mt-4"><b>Complemento:</b></p>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" class="form-control" id="txtComplemento" />
                                         </div>
                                     </div>
 
                                     <div class="col-2">
                                         <div class="form-group">
                                             <p class="title-categoria mb-0 mt-4"><b>UF:</b></p>
-                                            <select class="form-control">
+                                            <select class="form-control" id="ddlUf">
                                                 <option value="-1">...</option>
                                                 <option value="AC">AC</option>
                                                 <option value="AL">AL</option>
@@ -223,7 +223,7 @@
 
                                 </div>
 
-                                <a class="btn btn-yellow btn-sm mt-5">
+                                <a href="#" class="btn btn-yellow btn-sm mt-5" onclick="empresa.method.salvarDadosEndereco()">
                                     <i class="fas fa-check"></i>&nbsp; Salvar Alterações
                                 </a>
 
@@ -235,83 +235,11 @@
                                     <b>Configure o horário em que sua loja estará recebendo pedidos para delivery ou retirada.</b>
                                 </p>
 
-                                <div class="row horario mb-4">
-                                    
-                                    <div class="col-2">
-                                        <div class="form-group">
-                                            <p class="title-categoria mb-0"><b>De:</b></p>
-                                            <select class="form-control">
-                                                <option value="-1">...</option>
-                                                <option value="0">Domingo</option>
-                                                <option value="1">Segunda</option>
-                                                <option value="2">Terça</option>
-                                                <option value="3">Quarta</option>
-                                                <option value="4">Quinta</option>
-                                                <option value="5">Sexta</option>
-                                                <option value="6">Sábado</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-2">
-                                        <div class="form-group">
-                                            <p class="title-categoria mb-0"><b>até:</b></p>
-                                            <select class="form-control">
-                                                <option value="-1">...</option>
-                                                <option value="0">Domingo</option>
-                                                <option value="1">Segunda</option>
-                                                <option value="2">Terça</option>
-                                                <option value="3">Quarta</option>
-                                                <option value="4">Quinta</option>
-                                                <option value="5">Sexta</option>
-                                                <option value="6">Sábado</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-7">
-                                        <div class="row">
-
-                                            <div class="col-3">
-                                                <div class="form-group">
-                                                    <p class="title-categoria mb-0"><b>das:</b></p>
-                                                    <input type="time" class="form-control" />
-                                                </div>
-                                            </div>
-
-                                            <div class="col-3">
-                                                <div class="form-group">
-                                                    <p class="title-categoria mb-0"><b>até as:</b></p>
-                                                    <input type="time" class="form-control" />
-                                                </div>
-                                            </div>
-
-                                            <div class="col-3">
-                                                <div class="form-group">
-                                                    <p class="title-categoria mb-0"><b>e das:</b></p>
-                                                    <input type="time" class="form-control" />
-                                                </div>
-                                            </div>
-
-                                            <div class="col-3">
-                                                <div class="form-group">
-                                                    <p class="title-categoria mb-0"><b>até as:</b></p>
-                                                    <input type="time" class="form-control" />
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-1">
-                                        <a href="#" class="btn btn-red btn-sm">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </div>
+                                <div id="listaHorarios">
 
                                 </div>
 
-                                <div class="card card-select mb-4">
+                                <div class="card card-select mb-4" onclick="empresa.method.adicionarHorario()">
                                     <div class="infos-produto-opcional">
                                         <p class="mb-0 color-primary">
                                             <i class="fas fa-plus-circle"></i>&nbsp; Adicionar novo horário
@@ -319,7 +247,7 @@
                                     </div>
                                 </div>
 
-                                <a class="btn btn-yellow btn-sm mt-5">
+                                <a href="#!" class="btn btn-yellow btn-sm mt-5" onclick="empresa.method.salvarHorario()">
                                     <i class="fas fa-check"></i>&nbsp; Salvar Alterações
                                 </a>
 
@@ -352,6 +280,8 @@
         </div>
     </div>
 
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.mask.js"></script>
     <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="../js/app.js"></script>
     <script type="text/javascript" src="./js/empresa.js"></script>
